@@ -2,6 +2,7 @@ import csv
 import os
 import sys
 import requests
+import json
 
 JIRA_BASE_URL = os.environ['JIRA_BASE_URL']
 JIRA_API_TOKEN = os.environ['JIRA_API_TOKEN']
@@ -27,6 +28,7 @@ def onboard_user(email, name):
         print(f"Successfully onboarded user: {email}")
     else:
         print(f"Failed to onboard user: {email}. Status code: {response.status_code}")
+        print(f"Response content: {json.dumps(response.json(), indent=2)}")
 
 def main(csv_file):
     with open(csv_file, 'r') as file:
