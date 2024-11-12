@@ -1,0 +1,19 @@
+name: User Management
+description: Request to onboard or offboard users in Jira
+title: "[User Management] User Onboarding/Offboarding Request"
+labels: ["user-management"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request user onboarding or offboarding in Jira.
+        After creating the issue, comment with either:
+        - `/onboard filename.csv` for onboarding
+        - `/offboard filename.csv` for offboarding
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Additional Information
+      description: Any additional details or instructions
+    validations:
+      required: false
