@@ -16,7 +16,8 @@ def onboard_user(email, name):
     }
     payload = {
         "emailAddress": email,
-        "displayName": name
+        "displayName": name,
+        "products": ["jira-software"]  # Add this line
     }
     response = requests.post(
         url,
@@ -29,6 +30,8 @@ def onboard_user(email, name):
     else:
         print(f"Failed to onboard user: {email}. Status code: {response.status_code}")
         print(f"Response content: {json.dumps(response.json(), indent=2)}")
+
+# Rest of the script remains the same
 
 def main(csv_file):
     with open(csv_file, 'r') as file:
